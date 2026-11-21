@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Blaze - India's #1 Free Fire Esports Tournament App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff5500;
+            --primary-glow: rgba(255, 85, 0, 0.5);
+            --secondary: #ffaa00;
+            --bg-dark: #0a0b10;
+            --card-bg: #131620;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 6%;
+            background: rgba(10, 11, 16, 0.95);
+            border-bottom: 1px solid rgba(255, 85, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff5500, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn {
+            background: rgba(255, 85, 0, 0.15);
+            color: var(--secondary);
+            border: 1px solid var(--primary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 6% 50px;
+            background: radial-gradient(circle at top, rgba(255, 85, 0, 0.18), transparent 65%);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 170, 0, 0.15);
+            color: var(--secondary);
+            border: 1px solid rgba(255, 170, 0, 0.4);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.3rem;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 0.98rem;
+        }
+
+        .download-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff5500, #e63900);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 16px 36px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px var(--primary-glow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 85, 0, 0.75);
+        }
+
+        .app-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .app-meta span {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        /* Stats Strip */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 750px;
+            margin: 35px auto 0;
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .stat-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary);
+            font-size: 1.25rem;
+        }
+
+        .stat-item p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Features Section */
+        .section {
+            padding: 50px 6%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(255, 85, 0, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* How to Install */
+        .steps {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(255, 85, 0, 0.2);
+        }
+
+        .step-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .step-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-num {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* Support Banner */
+        .support-box {
+            text-align: center;
+            background: linear-gradient(135deg, #161b29, #1f1410);
+            padding: 35px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 85, 0, 0.3);
+            margin-top: 20px;
+        }
+
+        .btn-tg {
+            display: inline-block;
+            margin-top: 15px;
+            background: #229ED9;
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 6%;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .footer-links {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        /* Modal for Terms */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            max-width: 500px;
+            width: 100%;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid var(--primary);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h3 {
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .close-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.75rem; }
+            .stats { grid-template-columns: 1fr; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">BATTLE BLAZE</div>
+        <a href="#download" class="nav-btn">Download APK</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="download">
+        <div class="badge">🔥 India's Trusted Free Fire Esports App</div>
+        <h1>Khelo Free Fire Aur Jeeto <span>Daily Rewards</span></h1>
+        <p>Daily Battle Royale (BR) aur Clash Squad (CS) custom rooms join karo. Apni gaming skill dikhao, Coins jeeto aur fast UPI / Paytm withdrawal pao!</p>
+        
+        <div class="download-box">
+            <!-- NOTE: GitHub par APK upload karne ke baad href mein 'BattleBlaze.apk' ka naam check kar lein -->
+            <a href="BattleBlaze.apk" download class="btn-download">
+                ⬇️ DOWNLOAD APP NOW
+            </a>
+            <div class="app-meta">
+                <span>✔ 100% Safe & Anti-Cheat</span> • Size: ~18 MB • Android 7.0+
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <h3>10 Min</h3>
+                <p>Match Se Pehle Room ID/Pass</p>
+            </div>
+            <div class="stat-item">
+                <h3>Fast UPI</h3>
+                <p>Instant Coin Redemption</p>
+            </div>
+            <div class="stat-item">
+                <h3>100% Fair</h3>
+                <p>No Hackers / Strict Rules</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <h2 class="section-title">Kyun Chunein <span>Battle Blaze?</span></h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🎮</div>
+                <h3>Daily BR & CS Matches</h3>
+                <p>Solo, Duo, Squad aur Clash Squad custom tournaments har roz subah se raat tak live rehte hain.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Super Lightweight App</h3>
+                <p>Sirf ~18 MB ka smooth aur ad-free app, jo kisi bhi budget Android phone par bina lag ke chalta hai.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h3>Easy Coins & Fast Payout</h3>
+                <p>Har kill aur Booyah par Coins kamao aur apne UPI ya Paytm par fast withdrawal request lagao.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎁</div>
+                <h3>Refer & Earn 5 Coins</h3>
+                <p>Apne doston ko invite karo aur har active referral par seedha 5 Bonus Coins apne wallet mein pao.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Install -->
+    <section class="section">
+        <h2 class="section-title">App <span>Install</span> Kaise Karein?</h2>
+        <div class="steps">
+            <div class="step-row">
+                <div class="step-num">1</div>
+                <div>
+                    <strong>APK Download Karein:</strong> Upar diye gaye "Download App Now" button par click karke Battle Blaze APK file download karein.
+                </div>
+            </div>
+            <div class="step-row">
+                <div class="step-num">2</div>
+                <div>
+                    <strong>Unknown Sources Allow Karein:</strong> File par click karein, agar phone permission maange toh Settings mein jakar "Allow from this source" on karein.
+                </div>
+            </div>
+            <div class="step-row">
+                <div class="step-num">3</div>
+                <div>
+                    <strong>Account Banayein aur Khelein:</strong> App open karke apna naam, Free Fire UID aur email daal kar register karein aur tournament join karein!
+                </div>
+            </div>
+        </div>
+
+        <!-- Telegram Support -->
+        <div class="support-box">
+            <h3>Koi Help Chahiye? Direct Support Se Baat Karein</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">Match updates, Room ID alerts aur 24/7 customer support ke liye hamara official Telegram channel join karein.</p>
+            <!-- Yahan apna Telegram link daalein -->
+            <a href="https://t.me/battleblaze_official" target="_blank" class="btn-tg">📲 Join Official Telegram</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a onclick="openModal()">Terms & Conditions</a> | 
+            <a onclick="openModal()">Refund & Fair Play Policy</a>
+        </div>
+        <p>© 2026 Battle Blaze Esports (battleblaze.online). All Rights Reserved.</p>
+        <p style="font-size: 0.72rem; margin-top: 6px;">Disclaimer: This is an independent esports tournament platform and is not affiliated with Garena International.</p>
+    </footer>
+
+    <!-- Terms & Refund Policy Modal -->
+    <div class="modal" id="policyModal">
+        <div class="modal-content">
+            <h3>Terms, Refund & Fair Play Policy</h3>
+            <p><strong>1. Non-Refundable Entry:</strong> Ek baar kisi tournament match mein join karne ke baad entry coins refundable nahi honge (jab tak match admin ki taraf se cancel na kiya jaye).</p>
+            <p><strong>2. Room ID & Password:</strong> Match start hone se 10 minute pehle app ke "My Matches" section mein Room ID aur Password show ho jayega. Samay par join karna player ki zimmedari hai.</p>
+            <p><strong>3. Anti-Cheat Policy:</strong> Kisi bhi tarah ka hack, panel, glitch, ya teaming pakde jaane par account turant ban kar diya jayega aur koi prize nahi milega.</p>
+            <p><strong>4. Age Limit:</strong> Yeh platform sirf 18+ skill-based esports players ke liye hai.</p>
+            <button class="close-btn" onclick="closeModal()">Samajh Gaya (Close)</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('policyModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('policyModal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
